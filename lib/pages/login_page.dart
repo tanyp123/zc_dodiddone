@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zc_dodiddone/theme/theme.dart';
 
+import 'main_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -86,11 +88,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               const SizedBox(height: 40),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () { Navigator.pushReplacement(context, 
+                MaterialPageRoute(builder: (context) => const MainPage()));
                   // Handle login/registration logic here
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: DodiddoneTheme.lightTheme.colorScheme.primary,
+                  backgroundColor:   !isLogin
+                        ? DodiddoneTheme.lightTheme.colorScheme.primary
+                        : DodiddoneTheme.lightTheme.colorScheme.secondary,
                   padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                   textStyle: const TextStyle(
                     fontSize: 18,

@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 
 class DodiddoneTheme {
   static ThemeData lightTheme = ThemeData(
-    // This is the theme of your application.
-    //
-    // TRY THIS: Try running your application with "flutter run". You'll see
-    // the application has a purple toolbar. Then, without quitting the app,
-    // try changing the seedColor in the colorScheme below to Colors.green
-    // and then invoke "hot reload" (save your changes or press the "hot
-    // reload" button in a Flutter-supported IDE, or press "r" if you used
-    // the command line to start the app).
-    //
-    // Notice that the counter didn't reset back to zero; the application
-    // state is not lost during the reload. To reset the state, use hot
-    // restart instead.
-    // 
-    // This works for code too, not just values: Most code changes can be
-    // tested with just a hot reload.
+    
     colorScheme: ColorScheme.fromSeed(
       seedColor: const Color(0xFF9f7bf6), // Primary color
       brightness: Brightness.light,
       secondary: const Color(0xFF4ceb8b), // Secondary color
     ),
     useMaterial3: true,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent, // Прозрачный фон
+      // Без тени
+      selectedItemColor: const Color(0xFF9f7bf6), // Цвет выбранного элемента
+      unselectedItemColor:   const Color(0xFF4ceb8b).withOpacity(0.5), // Цвет невыбранного элемента
+      showUnselectedLabels: true, // Отображать метки невыбранных элементов
+      selectedIconTheme: const IconThemeData(
+        color: Color(0xFF9f7bf6), // Основной цвет для выбранных иконок
+      ),
+      unselectedIconTheme: const IconThemeData(
+        color: Color(0xFF4ceb8b), // Основной цвет для невыбранных иконок
+      ),
+  )
   );
+  
 }
